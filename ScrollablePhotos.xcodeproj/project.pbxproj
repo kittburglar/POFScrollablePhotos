@@ -17,6 +17,7 @@
 		F8843E9623DC0F0E00BA45EF /* ImageService.m in Sources */ = {isa = PBXBuildFile; fileRef = F8843E9523DC0F0E00BA45EF /* ImageService.m */; };
 		F8843EA823DC127100BA45EF /* NetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = F8843EA723DC127100BA45EF /* NetworkService.m */; };
 		F8843EAB23DC15A900BA45EF /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = F8843EAA23DC15A900BA45EF /* Constants.m */; };
+		F8843EAE23DCE0E300BA45EF /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = F8843EAD23DCE0E300BA45EF /* Photo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,8 @@
 		F8843EA723DC127100BA45EF /* NetworkService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkService.m; sourceTree = "<group>"; };
 		F8843EA923DC15A900BA45EF /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		F8843EAA23DC15A900BA45EF /* Constants.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		F8843EAC23DCE0E300BA45EF /* Photo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
+		F8843EAD23DCE0E300BA45EF /* Photo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +107,8 @@
 		F8843E9023DC0E9E00BA45EF /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				F8843EAC23DCE0E300BA45EF /* Photo.h */,
+				F8843EAD23DCE0E300BA45EF /* Photo.m */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -213,6 +218,7 @@
 				F8843E7423DC0DD100BA45EF /* AppDelegate.m in Sources */,
 				F8843E8523DC0DD300BA45EF /* main.m in Sources */,
 				F8843E9623DC0F0E00BA45EF /* ImageService.m in Sources */,
+				F8843EAE23DCE0E300BA45EF /* Photo.m in Sources */,
 				F8843EA823DC127100BA45EF /* NetworkService.m in Sources */,
 				F8843EAB23DC15A900BA45EF /* Constants.m in Sources */,
 				F8843E7723DC0DD100BA45EF /* SceneDelegate.m in Sources */,

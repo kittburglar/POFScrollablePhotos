@@ -39,14 +39,10 @@
 
 }
 
-- (void)requestWithURL:(NSString *)url {
+- (void)requestWithURL:(NSString *)url completionHandler:(void (^)(NSData *data, NSURLResponse *response, NSError *error)) completionHandler {
     NSURLSession *session = [NSURLSession sharedSession];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
-    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
-            completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
-            {
-                NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
-            }];
+    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:completionHandler];
     [dataTask resume];
 }
 
