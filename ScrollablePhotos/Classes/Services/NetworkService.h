@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NetworkService : NSObject <NSURLConnectionDelegate>
     + (instancetype)sharedInstance;
-- (void)requestWithURL:(NSString *)url completionHandler:(void (^)(NSData *data, NSURLResponse *response, NSError *error)) completionHandler;
+    - (void)requestWithURL:(NSURL *)url completionHandler:(void (^)(NSData *data, NSURLResponse *response, NSError *error)) completionHandler;
 @end
 
 NS_ASSUME_NONNULL_END
