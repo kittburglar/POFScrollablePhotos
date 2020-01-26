@@ -18,6 +18,8 @@
 		F8843EA823DC127100BA45EF /* NetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = F8843EA723DC127100BA45EF /* NetworkService.m */; };
 		F8843EAB23DC15A900BA45EF /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = F8843EAA23DC15A900BA45EF /* Constants.m */; };
 		F8843EAE23DCE0E300BA45EF /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = F8843EAD23DCE0E300BA45EF /* Photo.m */; };
+		F8843EB723DD19C300BA45EF /* PhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F8843EB523DD19C300BA45EF /* PhotoCollectionViewCell.m */; };
+		F8843EB823DD19C300BA45EF /* PhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8843EB623DD19C300BA45EF /* PhotoCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,9 @@
 		F8843EAA23DC15A900BA45EF /* Constants.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		F8843EAC23DCE0E300BA45EF /* Photo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
 		F8843EAD23DCE0E300BA45EF /* Photo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
+		F8843EB423DD19C300BA45EF /* PhotoCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoCollectionViewCell.h; sourceTree = "<group>"; };
+		F8843EB523DD19C300BA45EF /* PhotoCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoCollectionViewCell.m; sourceTree = "<group>"; };
+		F8843EB623DD19C300BA45EF /* PhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +145,9 @@
 		F8843E9323DC0EDB00BA45EF /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				F8843EB423DD19C300BA45EF /* PhotoCollectionViewCell.h */,
+				F8843EB523DD19C300BA45EF /* PhotoCollectionViewCell.m */,
+				F8843EB623DD19C300BA45EF /* PhotoCollectionViewCell.xib */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -202,6 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8843E8223DC0DD300BA45EF /* LaunchScreen.storyboard in Resources */,
+				F8843EB823DD19C300BA45EF /* PhotoCollectionViewCell.xib in Resources */,
 				F8843E7F23DC0DD300BA45EF /* Assets.xcassets in Resources */,
 				F8843E7D23DC0DD100BA45EF /* Main.storyboard in Resources */,
 			);
@@ -215,6 +224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8843E7A23DC0DD100BA45EF /* ViewController.m in Sources */,
+				F8843EB723DD19C300BA45EF /* PhotoCollectionViewCell.m in Sources */,
 				F8843E7423DC0DD100BA45EF /* AppDelegate.m in Sources */,
 				F8843E8523DC0DD300BA45EF /* main.m in Sources */,
 				F8843E9623DC0F0E00BA45EF /* ImageManager.m in Sources */,
