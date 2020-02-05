@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
     - (void)addPhoto:(Photo *)photo;
     - (void)reorder:(NSInteger)shuffleCount;
     - (NSArray *)removeTitlesWithString:(NSArray *)removeStrings;
-
+    - (UIImage *)getImageFromCacheWithFilename:(NSString *)fileName;
 @end
 
 NS_ASSUME_NONNULL_END

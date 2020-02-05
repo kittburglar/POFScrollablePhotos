@@ -33,21 +33,6 @@ static NSString *const kBaseURL = @"http://jsonplaceholder.typicode.com";
     [self.photos addObject:photo];
 }
 
-- (void)downloadPhotoWithURL:(NSURL *)url completionHandler:(void (^)(NSData *data, NSURLResponse *response, NSError *error)) completionHandler {
-    dispatch_async(dispatch_get_global_queue(0,0), ^{
-        NSData * data = [[NSData alloc] initWithContentsOfURL: url];
-        if ( data == nil )
-            return;
-        dispatch_async(dispatch_get_main_queue(), ^{
-            // WARNING: is the cell still using the same data by this point??
-//            cell.image = [UIImage imageWithData: data];
-            
-            //Cache images;
-            
-        });
-    });
-}
-
 //Randomizing the list
 - (void)reorder:(NSInteger)shuffleCount {
     if (!shuffleCount) {
@@ -84,6 +69,19 @@ static NSString *const kBaseURL = @"http://jsonplaceholder.typicode.com";
     NSLog(@"Number of photos after removal: %lu", (unsigned long)[[self photos] count]);
 
     return [retVal copy];
+}
+
+- (UIImage *)getImageFromCacheWithFilename:(NSString *)fileName {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:fileName];
+    NSError *err = nil;
+    NSData *data = [NSData dataWithContentsOfFile:filePath
+                                        options:NSDataReadingUncached
+                                          error:&err];
+
+    UIImage *image = [UIImage imageWithData:data];
+    NSLog(@"Getting image with named: %@ at filePath: %@ ... %@", fileName, filePath, image ? @"Success! File exists in cache!" : @"File doesn't exist in cache yet!");
+    return image;
 }
 
 @end

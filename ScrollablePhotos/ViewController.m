@@ -68,7 +68,7 @@ static NSString *const kPhotoPath = @"photos";
     cell.titleLabel.text = [NSString stringWithFormat:@"%@", [photo title]];
     
     // Lazy loading the imageview's image from image url
-    UIImage *photoImage = [self getImageFromCacheWithFilename:[photo identifier]];
+    UIImage *photoImage = [[ImageManager sharedInstance] getImageFromCacheWithFilename:[photo identifier]];
     if (photoImage) {
         cell.imageView.image = photoImage;
     } else {
@@ -85,22 +85,6 @@ static NSString *const kPhotoPath = @"photos";
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     return CGSizeMake(200, 200);
 }
-
-#pragma mark ImageHelper
-
-- (UIImage *)getImageFromCacheWithFilename:(NSString *)fileName {
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:fileName];
-    NSError *err = nil;
-    NSData *data = [NSData dataWithContentsOfFile:filePath
-                                        options:NSDataReadingUncached
-                                          error:&err];
-    
-    UIImage *image = [UIImage imageWithData:data];
-    NSLog(@"Getting image with named: %@ at filePath: %@ ... %@", fileName, filePath, image ? @"Success! File exists in cache!" : @"File doesn't exist in cache yet!");
-    return image;
-}
-
 
 #pragma mark Buttons
 
