@@ -12,13 +12,13 @@
 #import "Photo.h"
 #import "PhotoCollectionViewCell.h"
 #import "UIImageView+Networking.h"
-#import "UIImage+Cache.h"
 
 static NSString *const kBaseURL = @"http://jsonplaceholder.typicode.com";
 static NSString *const kPhotoPath = @"photos";
 
 @interface ViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
     @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
+    @property (strong, nonatomic) IBOutlet UIButton *shuffleButton;
 
 @end
 
@@ -98,4 +98,11 @@ static NSString *const kPhotoPath = @"photos";
     return [UIImage imageWithData:data];
 }
 
+
+#pragma mark Shuffle Button
+- (IBAction)shuffleTapped:(UIButton *)sender {
+    ImageManager *imageManager = [ImageManager sharedInstance];
+    [imageManager reorder:[[imageManager photos] count]];
+    [self.collectionView reloadData];
+}
 @end

@@ -44,11 +44,20 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E8r-I0-UKV">
+                                <rect key="frame" x="182" y="561" width="50" height="30"/>
+                                <state key="normal" title="Shuffle"/>
+                                <connections>
+                                    <action selector="shuffleTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Zs-at-VkQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="WQg-rc-Avr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="11j-I1-F3n"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WQg-rc-Avr" secondAttribute="trailing" constant="20" id="Ipz-p6-jua"/>
+                            <constraint firstItem="E8r-I0-UKV" firstAttribute="top" secondItem="WQg-rc-Avr" secondAttribute="bottom" constant="8" id="Px1-Ya-TRK"/>
+                            <constraint firstItem="E8r-I0-UKV" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="VRi-Qh-XVD"/>
                             <constraint firstItem="WQg-rc-Avr" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="WeN-bP-7Yh"/>
                             <constraint firstItem="WQg-rc-Avr" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="hlW-rd-qtc"/>
                         </constraints>
@@ -56,6 +65,7 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="WQg-rc-Avr" id="5XF-o0-HZk"/>
+                        <outlet property="shuffleButton" destination="E8r-I0-UKV" id="DSZ-YA-7gg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
