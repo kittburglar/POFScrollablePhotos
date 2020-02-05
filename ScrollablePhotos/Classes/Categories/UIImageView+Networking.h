@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface UIImageView (Networking)
--(void)fetchImageFromURL:(NSURL *)url;
+-(void)fetchImageFromURL:(NSURL *)url cacheWithFileName:(NSString *)fileName;
 @end
 
 NS_ASSUME_NONNULL_END

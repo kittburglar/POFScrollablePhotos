@@ -12,6 +12,7 @@
 #import "Photo.h"
 #import "PhotoCollectionViewCell.h"
 #import "UIImageView+Networking.h"
+#import "UIImage+Cache.h"
 
 static NSString *const kBaseURL = @"http://jsonplaceholder.typicode.com";
 static NSString *const kPhotoPath = @"photos";
@@ -63,9 +64,16 @@ static NSString *const kPhotoPath = @"photos";
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     PhotoCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PhotoCell" forIndexPath:indexPath];
-    Photo *photo = [[[ImageManager sharedInstance] photos] objectAtIndex:indexPath.row];
-    cell.titleLabel.text = [NSString stringWithFormat:@"%@", photo.title];
-    [cell.imageView fetchImageFromURL:[NSURL URLWithString:[photo urlString]]];
+    Photo *photo = [[[ImageManager sharedInstance] photos] objectAtIndex:[indexPath row]];
+    cell.titleLabel.text = [NSString stringWithFormat:@"%@", [photo title]];
+    
+    // Lazy loading the imageview's image from image url
+    UIImage *photoImage = [self getImageFromCacheWithFilename:[photo identifier]];
+    if (photoImage) {
+        cell.imageView.image = photoImage;
+    } else {
+        [cell.imageView fetchImageFromURL:[NSURL URLWithString:[photo urlString]] cacheWithFileName:[photo identifier]];
+    }
     
     return cell;
 }
@@ -76,6 +84,18 @@ static NSString *const kPhotoPath = @"photos";
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     return CGSizeMake(200, 200);
+}
+
+#pragma mark ImageHelper
+
+- (UIImage *)getImageFromCacheWithFilename:(NSString *)fileName {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:fileName];
+    NSError *err = nil;
+    NSData *data = [NSData dataWithContentsOfFile:filePath
+                                        options:NSDataReadingUncached
+                                          error:&err];
+    return [UIImage imageWithData:data];
 }
 
 @end

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F82E306523EA22DF001AFCB3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F82E306423EA22DF001AFCB3 /* ViewController.m */; };
 		F85F355D23EA777700CCE275 /* UIImageView+Networking.m in Sources */ = {isa = PBXBuildFile; fileRef = F85F355C23EA777700CCE275 /* UIImageView+Networking.m */; };
+		F85F356023EA83B100CCE275 /* UIImage+Cache.m in Sources */ = {isa = PBXBuildFile; fileRef = F85F355F23EA83B100CCE275 /* UIImage+Cache.m */; };
 		F8843E7423DC0DD100BA45EF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F8843E7323DC0DD100BA45EF /* AppDelegate.m */; };
 		F8843E7723DC0DD100BA45EF /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F8843E7623DC0DD100BA45EF /* SceneDelegate.m */; };
 		F8843E7D23DC0DD100BA45EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8843E7B23DC0DD100BA45EF /* Main.storyboard */; };
@@ -28,6 +29,8 @@
 		F82E306423EA22DF001AFCB3 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = ScrollablePhotos/ViewController.m; sourceTree = SOURCE_ROOT; };
 		F85F355B23EA777700CCE275 /* UIImageView+Networking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Networking.h"; sourceTree = "<group>"; };
 		F85F355C23EA777700CCE275 /* UIImageView+Networking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Networking.m"; sourceTree = "<group>"; };
+		F85F355E23EA83B100CCE275 /* UIImage+Cache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Cache.h"; sourceTree = "<group>"; };
+		F85F355F23EA83B100CCE275 /* UIImage+Cache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Cache.m"; sourceTree = "<group>"; };
 		F8843E6F23DC0DD100BA45EF /* ScrollablePhotos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrollablePhotos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8843E7223DC0DD100BA45EF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../../AppDelegate.h; sourceTree = "<group>"; };
 		F8843E7323DC0DD100BA45EF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../../AppDelegate.m; sourceTree = "<group>"; };
@@ -67,6 +70,8 @@
 			children = (
 				F85F355B23EA777700CCE275 /* UIImageView+Networking.h */,
 				F85F355C23EA777700CCE275 /* UIImageView+Networking.m */,
+				F85F355E23EA83B100CCE275 /* UIImage+Cache.h */,
+				F85F355F23EA83B100CCE275 /* UIImage+Cache.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -238,6 +243,7 @@
 			files = (
 				F8843EB723DD19C300BA45EF /* PhotoCollectionViewCell.m in Sources */,
 				F8843E7423DC0DD100BA45EF /* AppDelegate.m in Sources */,
+				F85F356023EA83B100CCE275 /* UIImage+Cache.m in Sources */,
 				F8843E8523DC0DD300BA45EF /* main.m in Sources */,
 				F82E306523EA22DF001AFCB3 /* ViewController.m in Sources */,
 				F8843E9623DC0F0E00BA45EF /* ImageManager.m in Sources */,
