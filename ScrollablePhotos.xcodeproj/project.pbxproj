@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F82E306523EA22DF001AFCB3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F82E306423EA22DF001AFCB3 /* ViewController.m */; };
+		F85F355D23EA777700CCE275 /* UIImageView+Networking.m in Sources */ = {isa = PBXBuildFile; fileRef = F85F355C23EA777700CCE275 /* UIImageView+Networking.m */; };
 		F8843E7423DC0DD100BA45EF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F8843E7323DC0DD100BA45EF /* AppDelegate.m */; };
 		F8843E7723DC0DD100BA45EF /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F8843E7623DC0DD100BA45EF /* SceneDelegate.m */; };
 		F8843E7D23DC0DD100BA45EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8843E7B23DC0DD100BA45EF /* Main.storyboard */; };
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		F82E306323EA22DF001AFCB3 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = ScrollablePhotos/ViewController.h; sourceTree = SOURCE_ROOT; };
 		F82E306423EA22DF001AFCB3 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = ScrollablePhotos/ViewController.m; sourceTree = SOURCE_ROOT; };
+		F85F355B23EA777700CCE275 /* UIImageView+Networking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Networking.h"; sourceTree = "<group>"; };
+		F85F355C23EA777700CCE275 /* UIImageView+Networking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Networking.m"; sourceTree = "<group>"; };
 		F8843E6F23DC0DD100BA45EF /* ScrollablePhotos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrollablePhotos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8843E7223DC0DD100BA45EF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../../AppDelegate.h; sourceTree = "<group>"; };
 		F8843E7323DC0DD100BA45EF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../../AppDelegate.m; sourceTree = "<group>"; };
@@ -59,6 +62,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F85F355723EA76D200CCE275 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				F85F355B23EA777700CCE275 /* UIImageView+Networking.h */,
+				F85F355C23EA777700CCE275 /* UIImageView+Networking.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
 		F8843E6623DC0DD100BA45EF = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +103,7 @@
 		F8843E8E23DC0E7900BA45EF /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				F85F355723EA76D200CCE275 /* Categories */,
 				F8843E8F23DC0E9100BA45EF /* Screens */,
 				F8843E9123DC0EAB00BA45EF /* Services */,
 				F8843E9323DC0EDB00BA45EF /* UI */,
@@ -229,6 +242,7 @@
 				F82E306523EA22DF001AFCB3 /* ViewController.m in Sources */,
 				F8843E9623DC0F0E00BA45EF /* ImageManager.m in Sources */,
 				F8843EAE23DCE0E300BA45EF /* Photo.m in Sources */,
+				F85F355D23EA777700CCE275 /* UIImageView+Networking.m in Sources */,
 				F8843EA823DC127100BA45EF /* NetworkService.m in Sources */,
 				F8843EAB23DC15A900BA45EF /* Constants.m in Sources */,
 				F8843E7723DC0DD100BA45EF /* SceneDelegate.m in Sources */,

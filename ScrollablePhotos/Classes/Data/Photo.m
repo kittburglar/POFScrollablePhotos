@@ -15,7 +15,7 @@
             self.identifier = [NSString stringWithFormat:@"%@", jsonDict[@"id"]];
             self.thumbnailUrl = [NSString stringWithFormat:@"%@", jsonDict[@"thumbnailUrl"]];
             self.title = [NSString stringWithFormat:@"%@", jsonDict[@"title"]];
-            self.url = [NSString stringWithFormat:@"%@", jsonDict[@"url"]];
+            self.urlString = [NSString stringWithFormat:@"%@", jsonDict[@"url"]];
         }
         return self;
     }

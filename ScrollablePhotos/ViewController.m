@@ -11,6 +11,7 @@
 #import "ImageManager.h"
 #import "Photo.h"
 #import "PhotoCollectionViewCell.h"
+#import "UIImageView+Networking.h"
 
 static NSString *const kBaseURL = @"http://jsonplaceholder.typicode.com";
 static NSString *const kPhotoPath = @"photos";
@@ -52,9 +53,10 @@ static NSString *const kPhotoPath = @"photos";
 }
 
 - (void)finishedFetchingPhotoInfo {
-    NSLog(@"finished fetching photo info %@", [[ImageManager sharedInstance] photos]);
-//    [self.collectionView reloadData];
     //download images?
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.collectionView reloadData];
+    });
 }
 
 #pragma mark UICollectionViewDelegate Methods
@@ -63,7 +65,8 @@ static NSString *const kPhotoPath = @"photos";
     PhotoCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PhotoCell" forIndexPath:indexPath];
     Photo *photo = [[[ImageManager sharedInstance] photos] objectAtIndex:indexPath.row];
     cell.titleLabel.text = [NSString stringWithFormat:@"%@", photo.title];
-//    cell.titleLabel.text = [NSString stringWithFormat:@"%ld", (long)indexPath.row];
+    [cell.imageView fetchImageFromURL:[NSURL URLWithString:[photo urlString]]];
+    
     return cell;
 }
 

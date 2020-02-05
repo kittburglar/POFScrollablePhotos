@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
     @property (nonatomic, copy) NSString *identifier;
     @property (nonatomic, copy) NSString *thumbnailUrl;
     @property (nonatomic, copy) NSString *title;
-    @property (nonatomic, copy) NSString *url;
+    @property (nonatomic, copy) NSString *urlString;
 
     - (instancetype)initWithJSONDict:(NSDictionary *)jsonDict;
 @end
