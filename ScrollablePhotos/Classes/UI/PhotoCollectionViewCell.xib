@@ -16,8 +16,35 @@
                 <rect key="frame" x="0.0" y="0.0" width="555" height="334"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pencil.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="wPZ-IA-bwJ">
+                        <rect key="frame" x="20" y="64.5" width="515" height="215"/>
+                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="94f-Bl-SFp"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                <integer key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="layer.shadowColor">
+                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
+                                <size key="value" width="0.0" height="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                                <integer key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
+                                <integer key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="NO"/>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qqH-Hv-tBl">
-                        <rect key="frame" x="256" y="157" width="42" height="21"/>
+                        <rect key="frame" x="256" y="156" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -25,15 +52,23 @@
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="qqH-Hv-tBl" firstAttribute="centerY" secondItem="SEy-5g-ep8" secondAttribute="centerY" id="nPe-VB-dMQ"/>
-                <constraint firstItem="qqH-Hv-tBl" firstAttribute="centerX" secondItem="SEy-5g-ep8" secondAttribute="centerX" id="sYE-Gr-gkd"/>
+                <constraint firstItem="wPZ-IA-bwJ" firstAttribute="leading" secondItem="SEy-5g-ep8" secondAttribute="leading" constant="20" id="4Ps-Dt-QHc"/>
+                <constraint firstItem="wPZ-IA-bwJ" firstAttribute="top" secondItem="SEy-5g-ep8" secondAttribute="top" constant="20" id="5oT-C1-FNy"/>
+                <constraint firstItem="SEy-5g-ep8" firstAttribute="bottom" secondItem="wPZ-IA-bwJ" secondAttribute="bottom" constant="20" id="K2G-Qg-HaA"/>
+                <constraint firstItem="qqH-Hv-tBl" firstAttribute="centerY" secondItem="SEy-5g-ep8" secondAttribute="centerY" id="W18-1a-7LT"/>
+                <constraint firstItem="SEy-5g-ep8" firstAttribute="trailing" secondItem="wPZ-IA-bwJ" secondAttribute="trailing" constant="20" id="t3b-aQ-tVD"/>
+                <constraint firstItem="qqH-Hv-tBl" firstAttribute="centerX" secondItem="SEy-5g-ep8" secondAttribute="centerX" id="ygU-zp-TSr"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
             <size key="customSize" width="555" height="334"/>
             <connections>
+                <outlet property="imageView" destination="wPZ-IA-bwJ" id="yvK-Ef-3Pz"/>
                 <outlet property="titleLabel" destination="qqH-Hv-tBl" id="bOW-Fb-NIj"/>
             </connections>
             <point key="canvasLocation" x="503.62318840579712" y="170.75892857142856"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="pencil.circle" catalog="system" width="64" height="60"/>
+    </resources>
 </document>

@@ -15,7 +15,7 @@
 static NSString *const kBaseURL = @"http://jsonplaceholder.typicode.com";
 static NSString *const kPhotoPath = @"photos";
 
-@interface ViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
+@interface ViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
     @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @end
@@ -48,13 +48,12 @@ static NSString *const kPhotoPath = @"photos";
     [self.collectionView registerNib:[UINib nibWithNibName:@"PhotoCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"PhotoCell"];
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     [layout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
-    layout.estimatedItemSize = CGSizeMake(self.collectionView.frame.size.height - 10, self.collectionView.frame.size.height - 10);	
     [self.collectionView setCollectionViewLayout:layout];
 }
 
 - (void)finishedFetchingPhotoInfo {
     NSLog(@"finished fetching photo info %@", [[ImageManager sharedInstance] photos]);
-
+//    [self.collectionView reloadData];
     //download images?
 }
 
@@ -62,11 +61,18 @@ static NSString *const kPhotoPath = @"photos";
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     PhotoCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PhotoCell" forIndexPath:indexPath];
+    Photo *photo = [[[ImageManager sharedInstance] photos] objectAtIndex:indexPath.row];
+    cell.titleLabel.text = [NSString stringWithFormat:@"%@", photo.title];
+//    cell.titleLabel.text = [NSString stringWithFormat:@"%ld", (long)indexPath.row];
     return cell;
 }
 
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 100;
+    return [[[ImageManager sharedInstance] photos] count];
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    return CGSizeMake(200, 200);
 }
 
 @end

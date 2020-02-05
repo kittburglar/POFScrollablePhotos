@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F82E306523EA22DF001AFCB3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F82E306423EA22DF001AFCB3 /* ViewController.m */; };
 		F8843E7423DC0DD100BA45EF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F8843E7323DC0DD100BA45EF /* AppDelegate.m */; };
 		F8843E7723DC0DD100BA45EF /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F8843E7623DC0DD100BA45EF /* SceneDelegate.m */; };
-		F8843E7A23DC0DD100BA45EF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8843E7923DC0DD100BA45EF /* ViewController.m */; };
 		F8843E7D23DC0DD100BA45EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8843E7B23DC0DD100BA45EF /* Main.storyboard */; };
 		F8843E7F23DC0DD300BA45EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8843E7E23DC0DD300BA45EF /* Assets.xcassets */; };
 		F8843E8223DC0DD300BA45EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8843E8023DC0DD300BA45EF /* LaunchScreen.storyboard */; };
@@ -23,13 +23,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F82E306323EA22DF001AFCB3 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = ScrollablePhotos/ViewController.h; sourceTree = SOURCE_ROOT; };
+		F82E306423EA22DF001AFCB3 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = ScrollablePhotos/ViewController.m; sourceTree = SOURCE_ROOT; };
 		F8843E6F23DC0DD100BA45EF /* ScrollablePhotos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrollablePhotos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8843E7223DC0DD100BA45EF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../../AppDelegate.h; sourceTree = "<group>"; };
 		F8843E7323DC0DD100BA45EF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../../AppDelegate.m; sourceTree = "<group>"; };
 		F8843E7523DC0DD100BA45EF /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SceneDelegate.h; path = ../../SceneDelegate.h; sourceTree = "<group>"; };
 		F8843E7623DC0DD100BA45EF /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SceneDelegate.m; path = ../../SceneDelegate.m; sourceTree = "<group>"; };
-		F8843E7823DC0DD100BA45EF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = ../../ViewController.h; sourceTree = "<group>"; };
-		F8843E7923DC0DD100BA45EF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = ../../ViewController.m; sourceTree = "<group>"; };
 		F8843E7C23DC0DD100BA45EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F8843E7E23DC0DD300BA45EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F8843E8123DC0DD300BA45EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -103,8 +103,8 @@
 		F8843E8F23DC0E9100BA45EF /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				F8843E7823DC0DD100BA45EF /* ViewController.h */,
-				F8843E7923DC0DD100BA45EF /* ViewController.m */,
+				F82E306323EA22DF001AFCB3 /* ViewController.h */,
+				F82E306423EA22DF001AFCB3 /* ViewController.m */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -223,10 +223,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8843E7A23DC0DD100BA45EF /* ViewController.m in Sources */,
 				F8843EB723DD19C300BA45EF /* PhotoCollectionViewCell.m in Sources */,
 				F8843E7423DC0DD100BA45EF /* AppDelegate.m in Sources */,
 				F8843E8523DC0DD300BA45EF /* main.m in Sources */,
+				F82E306523EA22DF001AFCB3 /* ViewController.m in Sources */,
 				F8843E9623DC0F0E00BA45EF /* ImageManager.m in Sources */,
 				F8843EAE23DCE0E300BA45EF /* Photo.m in Sources */,
 				F8843EA823DC127100BA45EF /* NetworkService.m in Sources */,
