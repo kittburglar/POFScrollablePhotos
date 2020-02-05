@@ -95,14 +95,26 @@ static NSString *const kPhotoPath = @"photos";
     NSData *data = [NSData dataWithContentsOfFile:filePath
                                         options:NSDataReadingUncached
                                           error:&err];
-    return [UIImage imageWithData:data];
+    
+    UIImage *image = [UIImage imageWithData:data];
+    NSLog(@"Getting image with named: %@ at filePath: %@ ... %@", fileName, filePath, image ? @"Success! File exists in cache!" : @"File doesn't exist in cache yet!");
+    return image;
 }
 
 
-#pragma mark Shuffle Button
+#pragma mark Buttons
+
 - (IBAction)shuffleTapped:(UIButton *)sender {
     ImageManager *imageManager = [ImageManager sharedInstance];
     [imageManager reorder:[[imageManager photos] count]];
     [self.collectionView reloadData];
 }
+
+- (IBAction)removeTapped:(UIButton *)sender {
+    [self.collectionView performBatchUpdates:^{
+        NSArray *removedPhotosIndexPaths = [[ImageManager sharedInstance] removeTitlesWithString:@[@"b", @"d"]];
+        [self.collectionView deleteItemsAtIndexPaths:removedPhotosIndexPaths];
+    } completion:nil];
+}
+
 @end

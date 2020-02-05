@@ -6,7 +6,7 @@
 //  Copyright © 2020 Kittiphong Xayasane. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import "Photo.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
     + (instancetype)sharedInstance;
     - (void)addPhoto:(Photo *)photo;
     - (void)reorder:(NSInteger)shuffleCount;
+    - (NSArray *)removeTitlesWithString:(NSArray *)removeStrings;
 
 @end
 

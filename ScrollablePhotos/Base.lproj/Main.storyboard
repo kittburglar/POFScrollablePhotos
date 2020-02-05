@@ -45,10 +45,17 @@
                                 </cells>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E8r-I0-UKV">
-                                <rect key="frame" x="182" y="561" width="50" height="30"/>
-                                <state key="normal" title="Shuffle"/>
+                                <rect key="frame" x="169" y="561" width="76" height="30"/>
+                                <state key="normal" title="Randomize"/>
                                 <connections>
                                     <action selector="shuffleTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Zs-at-VkQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Zm-u5-pfS">
+                                <rect key="frame" x="88.5" y="315" width="237" height="30"/>
+                                <state key="normal" title="Remove titles that contain 'd' or 'b'"/>
+                                <connections>
+                                    <action selector="removeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kfM-kb-Ywq"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -60,6 +67,8 @@
                             <constraint firstItem="E8r-I0-UKV" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="VRi-Qh-XVD"/>
                             <constraint firstItem="WQg-rc-Avr" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="WeN-bP-7Yh"/>
                             <constraint firstItem="WQg-rc-Avr" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="hlW-rd-qtc"/>
+                            <constraint firstItem="WQg-rc-Avr" firstAttribute="top" secondItem="6Zm-u5-pfS" secondAttribute="bottom" constant="8" id="kBJ-rL-5vu"/>
+                            <constraint firstItem="6Zm-u5-pfS" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="wzZ-MX-2av"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

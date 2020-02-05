@@ -48,6 +48,7 @@ static NSString *const kBaseURL = @"http://jsonplaceholder.typicode.com";
     });
 }
 
+//Randomizing the list
 - (void)reorder:(NSInteger)shuffleCount {
     if (!shuffleCount) {
         return;
@@ -60,6 +61,29 @@ static NSString *const kBaseURL = @"http://jsonplaceholder.typicode.com";
     [self.photos insertObject:photo atIndex:randomInteger];
 
     return [self reorder:shuffleCount-1];
+}
+
+// Removing items from list with title match
+- (NSArray *)removeTitlesWithString:(NSArray *)removeStrings {
+    NSMutableArray *retVal = [NSMutableArray array];
+
+    NSMutableIndexSet *indexSet = [NSMutableIndexSet indexSet];
+    for (int i = 0; i < [[self photos] count]; i++) {
+        Photo *photo = [[self photos] objectAtIndex:i];
+        for (NSString *removeStr in removeStrings) {
+            if ([[photo title] containsString:removeStr]) {
+                [indexSet addIndex:i];
+                [retVal addObject:[NSIndexPath indexPathForRow:i inSection:0]];
+                break;
+            }
+        }
+    }
+
+    NSLog(@"Number of photos before removal: %lu", (unsigned long)[[self photos] count]);
+    [[self photos] removeObjectsAtIndexes:indexSet];
+    NSLog(@"Number of photos after removal: %lu", (unsigned long)[[self photos] count]);
+
+    return [retVal copy];
 }
 
 @end
