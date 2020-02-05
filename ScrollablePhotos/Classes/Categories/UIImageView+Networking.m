@@ -13,6 +13,14 @@
 -(void)fetchImageFromURL:(NSURL *)url cacheWithFileName:(NSString *)fileName {
     
     [[[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (error) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Error Fetching Image From URL" message:error.localizedDescription preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction *acceptAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+                [alertController addAction:acceptAction];
+                [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alertController animated:YES completion:nil];
+            });
+        }
         dispatch_async(dispatch_get_main_queue(), ^{
             self.image = [UIImage imageWithData:data];
             [self saveToDiskWithFilename:fileName];

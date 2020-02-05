@@ -29,15 +29,6 @@
 }
 
 #pragma mark NSURLConnectionDelegate Methods
-- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
-}
-
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
-}
-
-- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
-
-}
 
 - (void)requestWithURL:(NSURL *)url completionHandler:(void (^)(NSData *data, NSURLResponse *response, NSError *error)) completionHandler {
     NSURLSession *session = [NSURLSession sharedSession];

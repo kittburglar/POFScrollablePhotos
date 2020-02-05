@@ -33,7 +33,7 @@ static NSString *const kBaseURL = @"http://jsonplaceholder.typicode.com";
     [self.photos addObject:photo];
 }
 
-//Randomizing the list
+// Randomizing the list of photos
 - (void)reorder:(NSInteger)shuffleCount {
     if (!shuffleCount) {
         return;
@@ -48,7 +48,7 @@ static NSString *const kBaseURL = @"http://jsonplaceholder.typicode.com";
     return [self reorder:shuffleCount-1];
 }
 
-// Removing items from list with title match
+// Removing photos from list that match the title
 - (NSArray *)removeTitlesWithString:(NSArray *)removeStrings {
     NSMutableArray *retVal = [NSMutableArray array];
 
@@ -71,6 +71,7 @@ static NSString *const kBaseURL = @"http://jsonplaceholder.typicode.com";
     return [retVal copy];
 }
 
+// Gets image from cache if it exists
 - (UIImage *)getImageFromCacheWithFilename:(NSString *)fileName {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:fileName];

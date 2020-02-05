@@ -34,6 +34,15 @@ static NSString *const kPhotoPath = @"photos";
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(finishedFetchingPhotoInfo) name:@"kNotificationFinishedFetchingPhotoInfo" object:nil];
     
     [[NetworkService sharedInstance] requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", kBaseURL, kPhotoPath]] completionHandler:^(NSData * _Nonnull data, NSURLResponse * _Nonnull response, NSError * _Nonnull error) {
+        if (error) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Error Fetching Photo List" message:error.localizedDescription preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction *acceptAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+                [alertController addAction:acceptAction];
+                [self presentViewController:alertController animated:YES completion:nil];
+            });
+        }
+
         NSArray *photoArray = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
         for (NSDictionary *photoDict in photoArray) {
             Photo *photo = [[Photo alloc] initWithJSONDict:photoDict];
