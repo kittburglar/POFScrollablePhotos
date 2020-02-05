@@ -48,4 +48,18 @@ static NSString *const kBaseURL = @"http://jsonplaceholder.typicode.com";
     });
 }
 
+- (void)reorder:(NSInteger)shuffleCount {
+    if (!shuffleCount) {
+        return;
+    }
+    NSInteger randomInteger = arc4random_uniform((int)[[self photos] count]);
+    Photo *photo = [self.photos objectAtIndex:randomInteger];
+    [self.photos removeObjectAtIndex:randomInteger];
+
+    randomInteger = arc4random_uniform((int)[[self photos] count]);
+    [self.photos insertObject:photo atIndex:randomInteger];
+
+    return [self reorder:shuffleCount-1];
+}
+
 @end

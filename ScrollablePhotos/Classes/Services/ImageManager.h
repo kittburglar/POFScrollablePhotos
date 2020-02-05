@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 
     + (instancetype)sharedInstance;
     - (void)addPhoto:(Photo *)photo;
+    - (void)reorder:(NSInteger)shuffleCount;
+
 @end
 
 NS_ASSUME_NONNULL_END
