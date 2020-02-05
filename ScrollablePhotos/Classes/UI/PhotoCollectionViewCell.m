@@ -19,7 +19,6 @@
     self.imageView.layer.shadowOffset = CGSizeMake(0, 5);
     self.imageView.layer.shadowOpacity = 1;
     self.imageView.layer.shadowRadius = 5.0;
-    self.imageView.clipsToBounds = NO;
 }
 
 @end
