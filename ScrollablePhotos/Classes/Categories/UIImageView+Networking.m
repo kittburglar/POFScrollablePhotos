@@ -27,6 +27,7 @@
     NSString *filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:fileName];
     
     // Save image.
+    NSLog(@"Saving image with named: %@ at filePath: %@", fileName, filePath);
     [UIImagePNGRepresentation(self.image) writeToFile:filePath atomically:YES];
 }
 
